@@ -1,0 +1,112 @@
+{
+  "message": "今日上架的书全部8折！",
+  "sliders": [
+    {"id": 1, "img_url": "../static/img/1.jpg"},
+    {"id": 2, "img_url": "../static/img/2.jpg"},
+    {"id": 3, "img_url": "../static/img/3.jpg"},
+    {"id": 4, "img_url": "../static/img/4.jpg"},
+    {"id": 5, "img_url": "../static/img/5.jpg"}
+  ],
+  "latestUpdate": [
+    {
+      "id": 1,
+      "title": "javascript权威指南",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Css3权威指南",
+      "anthor": [
+        "舒建波",
+        "杨浩政"
+      ],
+      "img_url": "../static/img/book2.jpg"
+    },
+    {
+      "id": 1,
+      "title": "javascript权威指南",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book3.jpg"
+    },
+    {
+      "id": 1,
+      "title": "javascript权威指南",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Css3权威指南",
+      "anthor": [
+        "舒建波",
+        "杨浩政"
+      ],
+      "img_url": "../static/img/book2.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Css3权威指南",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book4.jpg"
+    }
+  ],
+  "recommended": [
+    {
+      "id": 3,
+      "title": "javascript设计模式",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book4.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Unity3D圣经",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book5.jpg"
+    },
+    {
+      "id": 3,
+      "title": "javascript设计模式",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book4.jpg"
+    },
+    {
+      "id": 1,
+      "title": "javascript权威指南",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Css3权威指南",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "javascript设计模式",
+      "anthor": [
+        "舒建波"
+      ],
+      "img_url": "../static/img/book4.jpg"
+    }
+  ]
+}
