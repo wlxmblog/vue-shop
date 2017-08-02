@@ -1,6 +1,6 @@
 import 'uikit-css'
 import 'slideshow-css'
-import 'jquery'
+import './jquery-vendor'
 import 'uikit-js'
 import './assets/css/myUikit.css'
 

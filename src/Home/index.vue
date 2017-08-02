@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <search></search>
     <slider
       :sliders="sliders"></slider>
     <fast-message
@@ -72,7 +71,6 @@
 <script>
 import {mapGetters, mapState, mapMutations} from 'vuex'
 import HomePageData from './home.json'
-import Search from '../components/Search'
 import Slider from './Slider'
 import FastMessage from './FastMessage'
 import BookList from '../components/BookList'
@@ -80,7 +78,7 @@ import ModalDialog from '../components/ModalDialog'
 
 export default {
   name: 'home',
-  components: {Search, Slider, FastMessage, BookList, ModalDialog},
+  components: {Slider, FastMessage, BookList, ModalDialog},
   data () {
     return {
       message: '',
@@ -140,6 +138,9 @@ export default {
 
 <style lang='less'>
   .home {
+    .swiper {
+      margin-top: .8rem
+    }
     .book-list {
       header {
         height: .8rem;

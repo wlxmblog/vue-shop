@@ -5,7 +5,7 @@
       v-for="slider in sliders"
       :key="slider.id"
       :to="{name: 'bookDetail', params: {id: slider.id}}">
-      <img :src="slider.img_url" alt="">
+      <img :src="slider.img_url" width="200" height="100" alt="">
     </router-link>
   </ul>
 </template>
@@ -17,6 +17,7 @@ export default {
   props: ['sliders'],
   mounted () {
     require('slideshow-js')
+    require('slideshow-fx-js')
   }
 }
 </script>
@@ -24,8 +25,5 @@ export default {
 <style lang='less'>
   .swiper {
     height: 4rem;
-    img {
-      height: 4rem;
-    }
   }
 </style>

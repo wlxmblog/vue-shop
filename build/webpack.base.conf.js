@@ -27,6 +27,7 @@ module.exports = {
       'uikit-js$': 'uikit/dist/js/uikit.min.js',
       'slideshow-css$': 'uikit/dist/css/components/slideshow.css',
       'slideshow-js$': 'uikit/dist/js/components/slideshow.js',
+      'slideshow-fx-js$': 'uikit/dist/js/components/slideshow-fx.js'
     }
   },
   module: {

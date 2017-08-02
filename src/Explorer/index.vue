@@ -1,8 +1,6 @@
 <template>
   <div class="explorer ">
     <!-- 搜索栏 -->
-    <search></search>
-    <hr class="uk-grid-divider">
     <article>
       <header class="uk-grid uk-grid-width-1-2">
         <section>
@@ -27,11 +25,8 @@
 </template>
 
 <script>
-import Search from '../components/Search'
-
 export default {
   name: 'explore',
-  components: {Search},
   data () {
     return {
       classes: [
@@ -61,6 +56,7 @@ export default {
       }
     }
     article {
+      margin-top: .8rem;
       padding: 0 .2rem;
     }
     ul {

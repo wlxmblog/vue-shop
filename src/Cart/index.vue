@@ -2,15 +2,17 @@
   <div class="cart">
     <app-top
       :title="'购物车'">
-      <i class="trash uk-icon-trash"></i>
+      <i class="trash uk-icon-trash"
+        @click="removeBook"></i>
     </app-top>
     <cart-list
-      :list="cartList"></cart-list>
+      :list="cartList"
+      :selectBook="selectBook"></cart-list>
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 import AppTop from '../components/AppTop'
 import CartList from './CartList'
 
@@ -21,6 +23,12 @@ export default {
     ...mapState({
       cartList: state => state.cart.cartList
     })
+  },
+  methods: {
+    ...mapMutations([
+      'selectBook',
+      'removeBook'
+    ])
   }
 }
 </script>

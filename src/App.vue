@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <main-nav
-      v-if="isMainNav"
-      :navs="navs"></main-nav>
+    <search
+      v-if="needSearch"></search>
     <transition name="slide-fade">
       <keep-alive include="home">
         <router-view></router-view>
       </keep-alive>
     </transition>
+    <main-nav
+      v-if="isMainNav"
+      :navs="navs"></main-nav>
   </div>
 </template>
 
@@ -15,10 +17,11 @@
 import './assets/css/reset.css'
 import './assets/js/init.js'
 import MainNav from './components/MainNav'
+import Search from './components/Search'
 
 export default {
   name: 'app',
-  components: {MainNav},
+  components: {MainNav, Search},
   data () {
     return {
       navs: [
@@ -31,7 +34,17 @@ export default {
   },
   computed: {
     isMainNav () {
+      // this.needView(this.navs.map(x => x.url))
       let names = this.navs.map(x => x.url)
+      if (names.indexOf(this.$route.name) !== -1) {
+        return true
+      } else {
+        return false
+      }
+    },
+    needSearch () {
+      // this.needView(['home', 'explorer'])
+      let names = ['home', 'explorer']
       if (names.indexOf(this.$route.name) !== -1) {
         return true
       } else {
@@ -50,8 +63,8 @@ export default {
   transition: all .3s ease-out;
 }
 .slide-fade-enter,
-.slide-fade-leave-active {
-  transform: translateX(-100px);
+.slide-fade-leave {
+  transform: translateX(-10px);
   opacity: 0;
 }
 #app {
