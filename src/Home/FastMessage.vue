@@ -16,7 +16,8 @@ export default {
   .fast-message {
     height: .4rem;
     padding: 0 .2rem;
-    background: #eee;
+    background: rgb(250,250,250);
+    border-bottom: 1px solid #ddd;
     line-height: .4rem;
     label {
       display: inline-block;

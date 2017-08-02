@@ -22,7 +22,11 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'uikit-css$': 'uikit/dist/css/uikit.almost-flat.min.css',
+      'uikit-js$': 'uikit/dist/js/uikit.min.js',
+      'slideshow-css$': 'uikit/dist/css/components/slideshow.css',
+      'slideshow-js$': 'uikit/dist/js/components/slideshow.js',
     }
   },
   module: {

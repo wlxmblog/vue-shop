@@ -1,28 +1,22 @@
 <template>
-  <div class="nav-bar">
-      <ul>
-        <router-link
-          tag="li"
-          v-for="nav in data"
-          :key="nav.id"
-          :to="{name: nav.url}">{{nav.title}}</router-link>
-      </ul>
-    </div>
+  <nav class="nav-bar">
+    <ul>
+      <router-link
+        tag="li"
+        v-for="nav in navs"
+        :key="nav.id"
+        :to="{name: nav.url}">
+        <i :class="nav.icon"></i><br>
+        <span>{{nav.title}}</span>
+      </router-link>
+    </ul>
+  </nav>
 </template>
 
 <script>
 export default {
   name: 'main_nav',
-  data () {
-    return {
-      data: [
-        {title: '首页', url: 'home'},
-        {title: '分类', url: 'explorer'},
-        {title: '购物车', url: 'cart'},
-        {title: '我', url: 'me'}
-      ]
-    }
-  }
+  props: ['navs']
 }
 </script>
 
@@ -32,20 +26,27 @@ export default {
     bottom: 0;
     left: 0;
     width: 6.4rem;
-    z-index: 1;
+    z-index: 10;
+    ul{
+      margin: 0;
+      padding: 0;
+    }
     li{
       display: inline-block;
       width: 1.6rem;
       height: .8rem;
-      line-height: .8rem;
-      background: #ddd;
-      font-weight: bold;
+      background: rgb(250,250,250);
+      border-top: 1px solid #ddd;
       text-align: center;
       transition: all .3s;
       cursor: pointer;
-      &.router-link-exact-active.router-link-active{
+      &.router-link-exact-active.router-link-active {
         background: orange;
         color: #eee;
+      }
+      i {
+        font-size: .4rem;
+        margin-top: .1rem
       }
     }
   }

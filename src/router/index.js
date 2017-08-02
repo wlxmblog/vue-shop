@@ -1,10 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/Home'
-import Explorer from '@/Explorer'
-import Cart from '@/Cart'
-import Me from '@/Me'
-import BookDetail from '@/BookDetail'
 
 Vue.use(Router)
 
@@ -13,27 +8,32 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: resolve => require(['@/Home'], resolve)
     },
     {
       path: '/explorer',
       name: 'explorer',
-      component: Explorer
+      component: resolve => require(['@/Explorer'], resolve)
     },
     {
       path: '/cart',
       name: 'cart',
-      component: Cart
+      component: resolve => require(['@/Cart'], resolve)
     },
     {
       path: '/me',
       name: 'me',
-      component: Me
+      component: resolve => require(['@/Me'], resolve)
     },
     {
       path: '/book/:id',
       name: 'bookDetail',
-      component: BookDetail
+      component: resolve => require(['@/BookDetail'], resolve)
+    },
+    {
+      path: '/explorer/exploreDetail/:id',
+      name: 'exploreDetail',
+      component: resolve => require(['@/Explorer/ExploreDetail'], resolve)
     }
   ]
 })

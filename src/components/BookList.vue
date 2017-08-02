@@ -1,22 +1,18 @@
 <template>
-  <section class="book-list">
-    <header>
-      <span>{{heading}}</span>
-      <router-link
-        :to="{name: 'explorer'}">更多 &gt;</router-link>
-    </header>
-    <ul>
-      <router-link
-        tag="li"
+  <div class="book-list">
+    <slot></slot>
+    <ul class="uk-grid uk-grid-width-1-3">
+      <li
         v-for="book in bookList"
         :key="book.id"
-        :to="{name: 'bookDetail', params: {id: book.id}}">
-        <img :src="book.img_url">
+        @click="$emit('onBookSelect', book)">
+        <div class="img-box">
+          <img :src="book.img_url">
+        </div>
         <b class="title">{{book.title}}</b>
-        <span class="anthor">{{book.anthor | anthor}}</span>
-      </router-link>
+      </li>
     </ul>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -33,30 +29,37 @@ export default {
 
 <style lang='less'>
   .book-list {
-    margin-left: -.1rem;
-    header {
-      height: .8rem;
-      line-height: .8rem;
-      text-indent: .2rem;
-      border-bottom: 1px dashed #ddd;
-      span {float: left}
-      a {float: right; margin-right: .2rem}
-    }
+    margin-bottom: .8rem;
+    padding: 0 .2rem;
     li {
-      display: inline-block;
-      margin-left: .3rem;
-      margin-bottom: .3rem;
-      margin-top: .3rem;
+      margin-top: .2rem;
+      .img-box {
+        position: relative;
+        background: #fff;
+        &::after,
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: .1rem;
+          bottom: .05rem;
+          left: .08rem;
+          right: .08rem;
+          box-shadow: #999 0 2px 10px;
+          background: transparent;
+        }
+      }
       img {
         display: block;
-        width: 1.8rem; // 3*1.8=5.4
+        position: relative;
+        margin: auto;
+        z-index: 1;
       }
       .title {
-        display: block;
-        padding: .2rem 0;
-      }
-      .anthor {
-        color: #999;
+        display: inline-block;
+        padding-top: .15rem;
+        font-weight: 500;
+        line-height: .35rem;
       }
     }
   }

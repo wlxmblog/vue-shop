@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <main-nav></main-nav>
+    <main-nav
+      v-if="isMainNav"
+      :navs="navs"></main-nav>
     <transition name="slide-fade">
-      <router-view></router-view>
+      <keep-alive include="home">
+        <router-view></router-view>
+      </keep-alive>
     </transition>
   </div>
 </template>
@@ -14,7 +18,27 @@ import MainNav from './components/MainNav'
 
 export default {
   name: 'app',
-  components: {MainNav}
+  components: {MainNav},
+  data () {
+    return {
+      navs: [
+        {title: '首页', url: 'home', icon: 'uk-icon-home'},
+        {title: '分类', url: 'explorer', icon: 'uk-icon-th-large'},
+        {title: '购物车', url: 'cart', icon: 'uk-icon-shopping-cart'},
+        {title: '我', url: 'me', icon: 'uk-icon-user'}
+      ]
+    }
+  },
+  computed: {
+    isMainNav () {
+      let names = this.navs.map(x => x.url)
+      if (names.indexOf(this.$route.name) !== -1) {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
 }
 </script>
 

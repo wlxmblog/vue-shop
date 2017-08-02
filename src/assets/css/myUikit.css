@@ -1,0 +1,4 @@
+.uk-grid,
+.uk-grid-medium{margin-left: -.2rem}
+.uk-grid>*,
+.uk-grid-medium>*{padding-left: .2rem; margin-top: .2rem}
